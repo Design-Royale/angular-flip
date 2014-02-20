@@ -8,7 +8,7 @@
     transform: rotatex(-180deg);
   }
 
-  &.flipped[horizontal] .card {
+  &.flipped[dr-flip-horizontal] .card {
     -webkit-transform: rotatey(-180deg);
     transform: rotatey(-180deg);
   }
@@ -41,7 +41,7 @@
     }
   }
 
-  &[horizontal] .card .back {
+  &[dr-flip-horizontal] .card .back {
     -webkit-transform: rotatey(-180deg);
     transform: rotatey(-180deg);
 

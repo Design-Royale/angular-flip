@@ -33,29 +33,29 @@
 <div ng-app="demo">
   <label><input type="checkbox" ng-model="flipped" /> flipped</label>
 
-  <flip flipped="flipped">
-    <flip-front>
-        <button flip-toggle>flip vertically</button>
-    </flip-front>
-    <flip-back flip-toggle>
+  <dr-flip dr-flipped="flipped">
+    <dr-flip-front>
+        <button dr-flip-toggle>flip vertically</button>
+    </dr-flip-front>
+    <dr-flip-back dr-flip-toggle>
       <img src="tux.png">
       <h4>Here it is!</h4>
-    </flip-back>
-  </flip>
+    </dr-flip-back>
+  </dr-flip>
 
-  <flip horizontal flip-toggle>
-    <flip-front>Click to flip horizontally</flip-front>
-    <flip-back>
+  <dr-flip dr-flip-horizontal dr-flip-toggle>
+    <dr-flip-front>Click to flip horizontally</dr-flip-front>
+    <dr-flip-back>
       <img src="tux.png">
       <h4>Here it is!</h4>
-    </flip-back>
-  </flip>
+    </dr-flip-back>
+  </dr-flip>
 </div>
 
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="src/angular-flip.js"></script>
 <script>
-angular.module('demo', ['angular-flip']);
+angular.module('demo', ['drFlip']);
 </script>
 </body>
 </html>

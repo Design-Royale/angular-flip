@@ -1,5 +1,5 @@
 {
-  "name": "angular-flip",
+  "name": "angular-flip-dr",
   "version": "0.0.1",
   "ignore": [
     "**/.*",
@@ -9,8 +9,8 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "1.2.13",
-    "angular-mocks": "1.2.13",
+    "angular": "1.2.6",
+    "angular-mocks": "1.2.6",
     "jquery": "~2.0.3"
   }
 }

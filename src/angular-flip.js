@@ -1,36 +1,36 @@
 'use strict';
 
-angular.module('angular-flip', [])
-  .directive('flip', function() {
+angular.module('drFlip', [])
+  .directive('drFlip', function() {
     return {
       restrict: 'E',
       transclude: true,
       replace: true,
       scope: {
-        flipped: '=?'
+        drFlipped: '=?'
       },
       template:
-      '<div class="flip">' +
-      '<div class="card" ng-transclude></div>' +
-      '</div>',
+        '<div class="flip">' +
+          '<div class="card" ng-transclude></div>' +
+        '</div>',
       controller: ['$scope', '$element', function($scope, $element) {
         this.toggle = function() {
           var flipped = !$element.hasClass('flipped');
           $scope.$apply(function() {
-            $scope.flipped = flipped;
+            $scope.drFlipped = flipped;
           });
         };
 
-        this.flipFront = function() {
-          $scope.flipped = false;
+        this.drFlipFront = function() {
+          $scope.drFlipped = false;
         };
 
-        this.flipBack = function() {
-          $scope.flipped = true;
+        this.drFlipBack = function() {
+          $scope.drFlipped = true;
         };
       }],
       link: function(scope, elm, attrs) {
-        scope.$watch('flipped', function(newValue, oldValue) {
+        scope.$watch('drFlipped', function(newValue, oldValue) {
           if (newValue) {
             elm.addClass('flipped');
           } else {
@@ -40,34 +40,34 @@ angular.module('angular-flip', [])
       }
     };
   })
-  .directive('flipFront', function() {
+  .directive('drFlipFront', function() {
     return {
-      require: '^flip',
+      require: '^drFlip',
       restrict: 'E',
       replace: true,
       transclude: true,
       template:
-      '<div class="face front" ng-transclude></div>'
+        '<div class="face front" ng-transclude></div>'
     };
   })
-  .directive('flipBack', function() {
+  .directive('drFlipBack', function() {
     return {
-      require: '^flip',
+      require: '^drFlip',
       restrict: 'E',
       replace: true,
       transclude: true,
       template:
-      '<div class="face back" ng-transclude></div>'
+       '<div class="face back" ng-transclude></div>'
     };
   })
-  .directive('flipToggle', function() {
+  .directive('drFlipToggle', function() {
     return {
-      require: '^flip',
+      require: '^drFlip',
       restrict: 'A',
       link: function(scope, elm, attrs, controller) {
         var previousValue;
 
-        attrs.$observe('flipToggle', function(value) {
+        attrs.$observe('drFlipToggle', function(value) {
           if (!value) {
             value = 'click';
           }
