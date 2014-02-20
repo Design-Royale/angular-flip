@@ -14,15 +14,15 @@ Load `angular-flip.css` and `angular-flip.js` into your html:
 
 Inject `angular-flip` into your application module:
 ```javascript
-var app = angular.module('MyApp', ['angular-flip']);
+var app = angular.module('MyApp', ['drFlip']);
 ```
 
 Have fun:
 ```html
-<flip flip-toggle>
-    <flip-front>Visible content goes there</flip-front>
-    <flip-back>The other side</flip-back>
-</flip>
+<dr-flip dr-flip-toggle>
+    <dr-flip-front>Visible content goes there</dr-flip-front>
+    <dr-flip-back>The other side</dr-flip-back>
+</dr-flip>
 ```
 
 ##License
