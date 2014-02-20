@@ -1,33 +1,33 @@
-.flip {
+.dr-flip {
   position: relative;
   -webkit-perspective: 800;
   perspective: 800px; }
-  .flip.flipped .card {
+  .dr-flip.flipped .card {
     -webkit-transform: rotatex(-180deg);
     transform: rotatex(-180deg); }
-  .flip.flipped[dr-flip-horizontal] .card {
+  .dr-flip.flipped[dr-flip-horizontal] .card {
     -webkit-transform: rotatey(-180deg);
     transform: rotatey(-180deg); }
-  .flip .card {
+  .dr-flip .card {
     width: 100%;
     height: 100%;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     -webkit-transition: 0.5s;
     transition: 0.5s; }
-    .flip .card .face {
+    .dr-flip .card .face {
       width: 100%;
       height: 100%;
       position: absolute;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       z-index: 2; }
-    .flip .card .front {
+    .dr-flip .card .front {
       position: absolute;
       z-index: 1; }
-    .flip .card .back {
+    .dr-flip .card .back {
       -webkit-transform: rotatex(-180deg);
       transform: rotatex(-180deg); }
-  .flip[dr-flip-horizontal] .card .back {
+  .dr-flip[dr-flip-horizontal] .card .back {
     -webkit-transform: rotatey(-180deg);
     transform: rotatey(-180deg); }

@@ -10,7 +10,7 @@ angular.module('drFlip', [])
         drFlipped: '=?'
       },
       template:
-        '<div class="flip">' +
+        '<div class="dr-flip">' +
           '<div class="card" ng-transclude></div>' +
         '</div>',
       controller: ['$scope', '$element', function($scope, $element) {
