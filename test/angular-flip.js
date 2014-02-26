@@ -25,8 +25,9 @@ describe('A suite', function() {
   }));
 
   it('should replace tags', inject(function() {
+    console.log(elm.is);
     expect(elm.is('div')).toBe(true);
-    expect(elm.hasClass('flip')).toBe(true);
+    expect(elm.hasClass('dr-flip')).toBe(true);
 
     var children = elm.children();
 
