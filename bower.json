@@ -1,6 +1,7 @@
 {
   "name": "angular-flip-dr",
   "version": "0.0.1",
+  "main": "./src/angular-flip.js",
   "ignore": [
     "**/.*",
     "node_modules",
