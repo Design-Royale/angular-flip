@@ -3,7 +3,7 @@
 angular.module('drFlip', [])
   .directive('drFlip', function() {
     return {
-      restrict: 'E',
+      restrict: 'AE',
       transclude: true,
       replace: true,
       scope: {
@@ -21,20 +21,43 @@ angular.module('drFlip', [])
           });
         };
 
-        this.drFlipFront = function() {
+        this.flipFront = function() {
           $scope.drFlipped = false;
         };
 
-        this.drFlipBack = function() {
+        this.flipBack = function() {
           $scope.drFlipped = true;
         };
+        this.ie = function() {
+          var undef,
+            v = 3,
+            div = document.createElement('div'),
+            all = div.getElementsByTagName('i');
+
+          while (
+            div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->',
+            all[0]
+          ) {}
+          return v > 4 ? v : undef;
+        };
+        if (this.ie() <= 8) {
+          document.createElement('dr-flip');
+          document.createElement('dr-flip-front');
+          document.createElement('dr-flip-back');
+        }
       }],
-      link: function(scope, elm, attrs) {
+      link: function(scope, elm, attrs, controller) {
+        if (controller.ie() <= 9) {
+          elm.addClass('fallback');
+        }
+
         scope.$watch('drFlipped', function(newValue, oldValue) {
           if (newValue) {
             elm.addClass('flipped');
+            elm.removeClass('unflipped');
           } else {
             elm.removeClass('flipped');
+            elm.addClass('unflipped');
           }
         });
       }
@@ -43,7 +66,7 @@ angular.module('drFlip', [])
   .directive('drFlipFront', function() {
     return {
       require: '^drFlip',
-      restrict: 'E',
+      restrict: 'AE',
       replace: true,
       transclude: true,
       template:
@@ -53,7 +76,7 @@ angular.module('drFlip', [])
   .directive('drFlipBack', function() {
     return {
       require: '^drFlip',
-      restrict: 'E',
+      restrict: 'AE',
       replace: true,
       transclude: true,
       template:

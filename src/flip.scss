@@ -44,6 +44,32 @@
   &[dr-flip-horizontal] .card .back {
     -webkit-transform: rotatey(-180deg);
     transform: rotatey(-180deg);
-
   }
+
+  &.fallback {
+    &.flipped {
+      .card {
+        .front {
+          display: none;
+        }
+        .back {
+          display: block;
+        }
+      }
+    }
+    &.unflipped {
+      .card {
+        .front {
+          display: block;
+        }
+        .back {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+dr-flip, dr-flip-front, dr-flip-back {
+  display: block;
 }
