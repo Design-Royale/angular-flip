@@ -10,8 +10,7 @@ angular.module('drFlip', [])
         drFlipped: '=?'
       },
       template:
-        '<div class="dr-flip">' +
-          '<div class="card" ng-transclude></div>' +
+        '<div class="dr-flip" ng-transclude>' +
         '</div>',
       controller: ['$scope', '$element', function($scope, $element) {
         this.toggle = function() {

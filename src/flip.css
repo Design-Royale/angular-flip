@@ -1,30 +1,16 @@
 /* line 1, flip.scss */
 .dr-flip {
   position: relative;
-  -webkit-perspective: 800;
-  perspective: 800px;
 }
-/* line 6, flip.scss */
-.dr-flip.flipped .card {
-  -webkit-transform: rotatex(-180deg);
-  transform: rotatex(-180deg);
-}
-/* line 11, flip.scss */
-.dr-flip.flipped[dr-flip-horizontal] .card {
-  -webkit-transform: rotatey(-180deg);
-  transform: rotatey(-180deg);
-}
-/* line 16, flip.scss */
-.dr-flip .card {
-  width: 100%;
-  height: 100%;
+/* line 4, flip.scss */
+.dr-flip .face {
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-}
-/* line 24, flip.scss */
-.dr-flip .card .face {
+  -webkit-perspective: 800;
+  -ms-perspective: 800;
+  perspective: 800px;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -32,39 +18,66 @@
   backface-visibility: hidden;
   z-index: 2;
 }
-/* line 33, flip.scss */
-.dr-flip .card .front {
+/* line 20, flip.scss */
+.dr-flip .front {
   position: absolute;
   z-index: 1;
+  -webkit-transform: rotatex(0deg);
+  transform: rotatex(0deg);
 }
-/* line 38, flip.scss */
-.dr-flip .card .back {
+/* line 27, flip.scss */
+.dr-flip .back {
   -webkit-transform: rotatex(-180deg);
   transform: rotatex(-180deg);
 }
-/* line 44, flip.scss */
-.dr-flip[dr-flip-horizontal] .card .back {
+/* line 32, flip.scss */
+.dr-flip.flipped .front {
+  -webkit-transform: rotatex(-180deg);
+  transform: rotatex(-180deg);
+}
+/* line 37, flip.scss */
+.dr-flip.flipped .back {
+  -webkit-transform: rotatex(0deg);
+  transform: rotatex(0deg);
+}
+/* line 42, flip.scss */
+.dr-flip[dr-flip-horizontal] .front {
+  -webkit-transform: rotatey(0deg);
+  transform: rotatey(0deg);
+}
+/* line 47, flip.scss */
+.dr-flip[dr-flip-horizontal] .back {
   -webkit-transform: rotatey(-180deg);
   transform: rotatey(-180deg);
 }
 /* line 52, flip.scss */
-.dr-flip.fallback.flipped .card .front {
+.dr-flip.flipped[dr-flip-horizontal] .front {
+  -webkit-transform: rotatey(-180deg);
+  transform: rotatey(-180deg);
+}
+/* line 57, flip.scss */
+.dr-flip.flipped[dr-flip-horizontal] .back {
+  -webkit-transform: rotatey(0deg);
+  transform: rotatey(0deg);
+}
+/* line 64, flip.scss */
+.dr-flip.fallback.flipped .front {
   display: none;
 }
-/* line 55, flip.scss */
-.dr-flip.fallback.flipped .card .back {
+/* line 67, flip.scss */
+.dr-flip.fallback.flipped .back {
   display: block;
 }
-/* line 62, flip.scss */
-.dr-flip.fallback.unflipped .card .front {
+/* line 72, flip.scss */
+.dr-flip.fallback.unflipped .front {
   display: block;
 }
-/* line 65, flip.scss */
-.dr-flip.fallback.unflipped .card .back {
+/* line 75, flip.scss */
+.dr-flip.fallback.unflipped .back {
   display: none;
 }
 
-/* line 73, flip.scss */
+/* line 82, flip.scss */
 dr-flip, dr-flip-front, dr-flip-back {
   display: block;
 }
